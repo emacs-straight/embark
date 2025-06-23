@@ -1,4 +1,4 @@
-This is docx3q2gc.info, produced by makeinfo version 6.8 from
+This is docdeQSCx.info, produced by makeinfo version 6.8 from
 embark.texi.
 
 INFO-DIR-SECTION Emacs misc features
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docx3q2gc.info,  Node: Top,  Next: Overview,  Up: (dir)
+File: docdeQSCx.info,  Node: Top,  Next: Overview,  Up: (dir)
 
 Embark: Emacs Mini-Buffer Actions Rooted in Keymaps
 ***************************************************
@@ -68,7 +68,7 @@ Embark, Marginalia and Consult
 
 
 
-File: docx3q2gc.info,  Node: Overview,  Next: Quick start,  Prev: Top,  Up: Top
+File: docdeQSCx.info,  Node: Overview,  Next: Quick start,  Prev: Top,  Up: Top
 
 1 Overview
 **********
@@ -97,7 +97,7 @@ set of buffers, or customize for a set of variables.
 * Switching to a different command without losing what you've typed::
 
 
-File: docx3q2gc.info,  Node: Acting on targets,  Next: The default action on a target,  Up: Overview
+File: docdeQSCx.info,  Node: Acting on targets,  Next: The default action on a target,  Up: Overview
 
 1.1 Acting on targets
 =====================
@@ -197,7 +197,7 @@ read about the default actions and their key bindings
 project wiki.
 
 
-File: docx3q2gc.info,  Node: The default action on a target,  Next: Working with sets of possible targets,  Prev: Acting on targets,  Up: Overview
+File: docdeQSCx.info,  Node: The default action on a target,  Next: Working with sets of possible targets,  Prev: Acting on targets,  Up: Overview
 
 1.2 The default action on a target
 ==================================
@@ -237,7 +237,7 @@ Embark’s default configuration it will:
    • Find the file corresponding to an Emacs Lisp library at point.
 
 
-File: docx3q2gc.info,  Node: Working with sets of possible targets,  Next: Switching to a different command without losing what you've typed,  Prev: The default action on a target,  Up: Overview
+File: docdeQSCx.info,  Node: Working with sets of possible targets,  Next: Switching to a different command without losing what you've typed,  Prev: The default action on a target,  Up: Overview
 
 1.3 Working with sets of possible targets
 =========================================
@@ -315,7 +315,7 @@ updated buffer.
 * embark-live a live-updating variant of embark-collect::
 
 
-File: docx3q2gc.info,  Node: Selecting some targets to make an ad hoc candidate set,  Next: embark-live a live-updating variant of embark-collect,  Up: Working with sets of possible targets
+File: docdeQSCx.info,  Node: Selecting some targets to make an ad hoc candidate set,  Next: embark-live a live-updating variant of embark-collect,  Up: Working with sets of possible targets
 
 1.3.1 Selecting some targets to make an ad hoc candidate set
 ------------------------------------------------------------
@@ -375,7 +375,7 @@ option.
      finally delete all of them (from their original locations).
 
 
-File: docx3q2gc.info,  Node: embark-live a live-updating variant of embark-collect,  Prev: Selecting some targets to make an ad hoc candidate set,  Up: Working with sets of possible targets
+File: docdeQSCx.info,  Node: embark-live a live-updating variant of embark-collect,  Prev: Selecting some targets to make an ad hoc candidate set,  Up: Working with sets of possible targets
 
 1.3.2 ‘embark-live’ a live-updating variant of ‘embark-collect’
 ---------------------------------------------------------------
@@ -403,7 +403,7 @@ as used by ‘outline-minor-mode’.  Those collectors really do give
 ‘embark-live’ a table-of-contents feel.
 
 
-File: docx3q2gc.info,  Node: Switching to a different command without losing what you've typed,  Prev: Working with sets of possible targets,  Up: Overview
+File: docdeQSCx.info,  Node: Switching to a different command without losing what you've typed,  Prev: Working with sets of possible targets,  Up: Overview
 
 1.4 Switching to a different command without losing what you’ve typed
 =====================================================================
@@ -444,7 +444,7 @@ others that also contain a binding for ‘switch-to-buffer’).  The end
 result is that I can type ‘C-. B f’ to switch to ‘find-file’.
 
 
-File: docx3q2gc.info,  Node: Quick start,  Next: Advanced configuration,  Prev: Overview,  Up: Top
+File: docdeQSCx.info,  Node: Quick start,  Next: Advanced configuration,  Prev: Overview,  Up: Top
 
 2 Quick start
 *************
@@ -483,6 +483,10 @@ configuration:
 
        ;; (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
        ;; (setq eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
+
+       ;; Add Embark to the mouse context menu. Also enable `context-menu-mode'.
+       ;; (context-menu 1)
+       ;; (add-hook 'context-menu-functions #'embark-context-menu 100)
 
        :config
 
@@ -545,7 +549,7 @@ minibuffer completion candidates.  (Embark does come with Ivy
 integration despite this.)
 
 
-File: docx3q2gc.info,  Node: Advanced configuration,  Next: How does Embark call the actions?,  Prev: Quick start,  Up: Top
+File: docdeQSCx.info,  Node: Advanced configuration,  Next: How does Embark call the actions?,  Prev: Quick start,  Up: Top
 
 3 Advanced configuration
 ************************
@@ -561,7 +565,7 @@ File: docx3q2gc.info,  Node: Advanced configuration,  Next: How does Embark call
 * Defining actions for new categories of targets::
 
 
-File: docx3q2gc.info,  Node: Showing information about available targets and actions,  Next: Selecting commands via completions instead of key bindings,  Up: Advanced configuration
+File: docdeQSCx.info,  Node: Showing information about available targets and actions,  Next: Selecting commands via completions instead of key bindings,  Up: Advanced configuration
 
 3.1 Showing information about available targets and actions
 ===========================================================
@@ -617,7 +621,7 @@ completion to narrow down the list of alternatives, described at the end
 of the next section.
 
 
-File: docx3q2gc.info,  Node: Selecting commands via completions instead of key bindings,  Next: Quitting the minibuffer after an action,  Prev: Showing information about available targets and actions,  Up: Advanced configuration
+File: docdeQSCx.info,  Node: Selecting commands via completions instead of key bindings,  Next: Quitting the minibuffer after an action,  Prev: Showing information about available targets and actions,  Up: Advanced configuration
 
 3.2 Selecting commands via completions instead of key bindings
 ==============================================================
@@ -676,7 +680,7 @@ Vertico buffers.
 * Selecting commands via completion outside of Embark::
 
 
-File: docx3q2gc.info,  Node: Selecting commands via completion outside of Embark,  Up: Selecting commands via completions instead of key bindings
+File: docdeQSCx.info,  Node: Selecting commands via completion outside of Embark,  Up: Selecting commands via completions instead of key bindings
 
 3.2.1 Selecting commands via completion outside of Embark
 ---------------------------------------------------------
@@ -708,7 +712,7 @@ bindings, typically those bound in the major mode keymap; to get global
 bindings as well, call it with a ‘C-u’ prefix argument.
 
 
-File: docx3q2gc.info,  Node: Quitting the minibuffer after an action,  Next: Running some setup after injecting the target,  Prev: Selecting commands via completions instead of key bindings,  Up: Advanced configuration
+File: docdeQSCx.info,  Node: Quitting the minibuffer after an action,  Next: Running some setup after injecting the target,  Prev: Selecting commands via completions instead of key bindings,  Up: Advanced configuration
 
 3.3 Quitting the minibuffer after an action
 ===========================================
@@ -754,7 +758,7 @@ non-quitting version as follows:
          (embark-act)))
 
 
-File: docx3q2gc.info,  Node: Running some setup after injecting the target,  Next: Running hooks before after or around an action,  Prev: Quitting the minibuffer after an action,  Up: Advanced configuration
+File: docdeQSCx.info,  Node: Running some setup after injecting the target,  Next: Running hooks before after or around an action,  Prev: Quitting the minibuffer after an action,  Up: Advanced configuration
 
 3.4 Running some setup after injecting the target
 =================================================
@@ -820,7 +824,7 @@ typically do _not_ want the target, that is the contents of the region,
 to be entered at that prompt!
 
 
-File: docx3q2gc.info,  Node: Running hooks before after or around an action,  Next: Creating your own keymaps,  Prev: Running some setup after injecting the target,  Up: Advanced configuration
+File: docdeQSCx.info,  Node: Running hooks before after or around an action,  Next: Creating your own keymaps,  Prev: Running some setup after injecting the target,  Up: Advanced configuration
 
 3.5 Running hooks before, after or around an action
 ===================================================
@@ -917,7 +921,7 @@ used in the default values of ‘embark-pre-action-hooks’,
      configuration doesn’t use this but it is available for users.
 
 
-File: docx3q2gc.info,  Node: Creating your own keymaps,  Next: Defining actions for new categories of targets,  Prev: Running hooks before after or around an action,  Up: Advanced configuration
+File: docdeQSCx.info,  Node: Creating your own keymaps,  Next: Defining actions for new categories of targets,  Prev: Running hooks before after or around an action,  Up: Advanced configuration
 
 3.6 Creating your own keymaps
 =============================
@@ -939,7 +943,7 @@ default Embark actions.  Note that ‘embark-collect’ and ‘embark-export’
 are also made available via ‘embark-general-map’.
 
 
-File: docx3q2gc.info,  Node: Defining actions for new categories of targets,  Prev: Creating your own keymaps,  Up: Advanced configuration
+File: docdeQSCx.info,  Node: Defining actions for new categories of targets,  Prev: Creating your own keymaps,  Up: Advanced configuration
 
 3.7 Defining actions for new categories of targets
 ==================================================
@@ -957,7 +961,7 @@ situations where the easiest option is not available.
 * New target example in regular buffers - short Wikipedia links::
 
 
-File: docx3q2gc.info,  Node: New minibuffer target example - tab-bar tabs,  Next: New target example in regular buffers - short Wikipedia links,  Up: Defining actions for new categories of targets
+File: docdeQSCx.info,  Node: New minibuffer target example - tab-bar tabs,  Next: New target example in regular buffers - short Wikipedia links,  Up: Defining actions for new categories of targets
 
 3.7.1 New minibuffer target example - tab-bar tabs
 --------------------------------------------------
@@ -1070,7 +1074,7 @@ so it knows that’s the keymap you want.
           described in the previous section.
 
 
-File: docx3q2gc.info,  Node: New target example in regular buffers - short Wikipedia links,  Prev: New minibuffer target example - tab-bar tabs,  Up: Defining actions for new categories of targets
+File: docdeQSCx.info,  Node: New target example in regular buffers - short Wikipedia links,  Prev: New minibuffer target example - tab-bar tabs,  Up: Defining actions for new categories of targets
 
 3.7.2 New target example in regular buffers - short Wikipedia links
 -------------------------------------------------------------------
@@ -1111,7 +1115,7 @@ documentation for ‘embark-target-finders’ for details.)
      (add-to-list 'embark-target-finders 'my-short-wikipedia-link)
 
 
-File: docx3q2gc.info,  Node: How does Embark call the actions?,  Next: Embark Marginalia and Consult,  Prev: Advanced configuration,  Up: Top
+File: docdeQSCx.info,  Node: How does Embark call the actions?,  Next: Embark Marginalia and Consult,  Prev: Advanced configuration,  Up: Top
 
 4 How does Embark call the actions?
 ***********************************
@@ -1195,7 +1199,7 @@ in the default configuration, such as ‘embark-shell-command-on-buffer’.
 * Non-interactive functions as actions::
 
 
-File: docx3q2gc.info,  Node: Non-interactive functions as actions,  Up: How does Embark call the actions?
+File: docdeQSCx.info,  Node: Non-interactive functions as actions,  Up: How does Embark call the actions?
 
 4.1 Non-interactive functions as actions
 ========================================
@@ -1227,7 +1231,7 @@ actions:
      non-string target.
 
 
-File: docx3q2gc.info,  Node: Embark Marginalia and Consult,  Next: Related Packages,  Prev: How does Embark call the actions?,  Up: Top
+File: docdeQSCx.info,  Node: Embark Marginalia and Consult,  Next: Related Packages,  Prev: How does Embark call the actions?,  Up: Top
 
 5 Embark, Marginalia and Consult
 ********************************
@@ -1248,7 +1252,7 @@ does for Embark, and what Embark can do for Consult.
 * Consult::
 
 
-File: docx3q2gc.info,  Node: Marginalia,  Next: Consult,  Up: Embark Marginalia and Consult
+File: docdeQSCx.info,  Node: Marginalia,  Next: Consult,  Up: Embark Marginalia and Consult
 
 5.1 Marginalia
 ==============
@@ -1280,7 +1284,7 @@ Embark collect buffer are also provided by the Marginalia package:
      characters in ‘C-x 8 RET’).
 
 
-File: docx3q2gc.info,  Node: Consult,  Prev: Marginalia,  Up: Embark Marginalia and Consult
+File: docdeQSCx.info,  Node: Consult,  Prev: Marginalia,  Up: Embark Marginalia and Consult
 
 5.2 Consult
 ===========
@@ -1370,7 +1374,7 @@ integrations between Embark and Consult.  Some examples are:
      leave the minibuffer open so you can navigate among the matches.
 
 
-File: docx3q2gc.info,  Node: Related Packages,  Next: Resources,  Prev: Embark Marginalia and Consult,  Up: Top
+File: docdeQSCx.info,  Node: Related Packages,  Next: Resources,  Prev: Embark Marginalia and Consult,  Up: Top
 
 6 Related Packages
 ******************
@@ -1394,7 +1398,7 @@ Collecting completion candidates into a buffer
      commands written using the Ivy API.
 
 
-File: docx3q2gc.info,  Node: Resources,  Next: Contributions,  Prev: Related Packages,  Up: Top
+File: docdeQSCx.info,  Node: Resources,  Next: Contributions,  Prev: Related Packages,  Up: Top
 
 7 Resources
 ***********
@@ -1423,7 +1427,7 @@ some links to read:
    • Marginalia, Consult and Embark by Mike Zamansky.
 
 
-File: docx3q2gc.info,  Node: Contributions,  Next: Acknowledgments,  Prev: Resources,  Up: Top
+File: docdeQSCx.info,  Node: Contributions,  Next: Acknowledgments,  Prev: Resources,  Up: Top
 
 8 Contributions
 ***************
@@ -1441,7 +1445,7 @@ GNU ELPA, copyright assignment to the FSF is required before you can
 contribute code.
 
 
-File: docx3q2gc.info,  Node: Acknowledgments,  Prev: Contributions,  Up: Top
+File: docdeQSCx.info,  Node: Acknowledgments,  Prev: Contributions,  Up: Top
 
 9 Acknowledgments
 *****************
@@ -1495,28 +1499,28 @@ Node: Selecting some targets to make an ad hoc candidate set14891
 Node: embark-live a live-updating variant of embark-collect18347
 Node: Switching to a different command without losing what you've typed20045
 Node: Quick start22622
-Node: Advanced configuration27541
-Node: Showing information about available targets and actions28126
-Node: Selecting commands via completions instead of key bindings30948
-Node: Selecting commands via completion outside of Embark34036
-Node: Quitting the minibuffer after an action35571
-Node: Running some setup after injecting the target38027
-Node: Running hooks before after or around an action41645
-Node: Creating your own keymaps46524
-Node: Defining actions for new categories of targets47431
-Node: New minibuffer target example - tab-bar tabs48203
-Ref: Telling Embark about commands that prompt for tabs by name49107
-Ref: Defining and configuring a keymap for tab actions51970
-Node: New target example in regular buffers - short Wikipedia links53761
-Node: How does Embark call the actions?56024
-Node: Non-interactive functions as actions60339
-Node: Embark Marginalia and Consult61696
-Node: Marginalia62427
-Node: Consult63934
-Node: Related Packages68696
-Node: Resources69793
-Node: Contributions70927
-Node: Acknowledgments71640
+Node: Advanced configuration27721
+Node: Showing information about available targets and actions28306
+Node: Selecting commands via completions instead of key bindings31128
+Node: Selecting commands via completion outside of Embark34216
+Node: Quitting the minibuffer after an action35751
+Node: Running some setup after injecting the target38207
+Node: Running hooks before after or around an action41825
+Node: Creating your own keymaps46704
+Node: Defining actions for new categories of targets47611
+Node: New minibuffer target example - tab-bar tabs48383
+Ref: Telling Embark about commands that prompt for tabs by name49287
+Ref: Defining and configuring a keymap for tab actions52150
+Node: New target example in regular buffers - short Wikipedia links53941
+Node: How does Embark call the actions?56204
+Node: Non-interactive functions as actions60519
+Node: Embark Marginalia and Consult61876
+Node: Marginalia62607
+Node: Consult64114
+Node: Related Packages68876
+Node: Resources69973
+Node: Contributions71107
+Node: Acknowledgments71820
 
 End Tag Table
 
