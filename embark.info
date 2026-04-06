@@ -42,6 +42,7 @@ Advanced configuration
 * Showing information about available targets and actions::
 * Selecting commands via completions instead of key bindings::
 * Quitting the minibuffer after an action::
+* Recording acted-on minibuffer candidates in minibuffer history::
 * Running some setup after injecting the target::
 * Running hooks before, after or around an action::
 * Creating your own keymaps::
@@ -555,6 +556,7 @@ File: embark.info,  Node: Advanced configuration,  Next: How does Embark call th
 * Showing information about available targets and actions::
 * Selecting commands via completions instead of key bindings::
 * Quitting the minibuffer after an action::
+* Recording acted-on minibuffer candidates in minibuffer history::
 * Running some setup after injecting the target::
 * Running hooks before, after or around an action::
 * Creating your own keymaps::
@@ -708,7 +710,7 @@ bindings, typically those bound in the major mode keymap; to get global
 bindings as well, call it with a ‘C-u’ prefix argument.
 
 
-File: embark.info,  Node: Quitting the minibuffer after an action,  Next: Running some setup after injecting the target,  Prev: Selecting commands via completions instead of key bindings,  Up: Advanced configuration
+File: embark.info,  Node: Quitting the minibuffer after an action,  Next: Recording acted-on minibuffer candidates in minibuffer history,  Prev: Selecting commands via completions instead of key bindings,  Up: Advanced configuration
 
 3.3 Quitting the minibuffer after an action
 ===========================================
@@ -754,9 +756,23 @@ non-quitting version as follows:
          (embark-act)))
 
 
-File: embark.info,  Node: Running some setup after injecting the target,  Next: Running hooks before, after or around an action,  Prev: Quitting the minibuffer after an action,  Up: Advanced configuration
+File: embark.info,  Node: Recording acted-on minibuffer candidates in minibuffer history,  Next: Running some setup after injecting the target,  Prev: Quitting the minibuffer after an action,  Up: Advanced configuration
 
-3.4 Running some setup after injecting the target
+3.4 Recording acted-on minibuffer candidates in minibuffer history
+==================================================================
+
+Confirming minibuffer input with ‘RET’ records the selected candidate in
+the appropriate history list.  The user option
+‘embark-record-minibuffer-history’ controls how Embark records acted-on
+candidates.  This option accepts three kinds of values: ‘t’ (always
+record), ‘nil’ (never record), or ‘(skip ACTIONS...)’ to record for
+everything except the listed actions.  The default is a ‘skip’ form that
+excludes meta commands such as ‘embark-export’.
+
+
+File: embark.info,  Node: Running some setup after injecting the target,  Next: Running hooks before, after or around an action,  Prev: Recording acted-on minibuffer candidates in minibuffer history,  Up: Advanced configuration
+
+3.5 Running some setup after injecting the target
 =================================================
 
 You can customize what happens after the target is inserted at the
@@ -822,7 +838,7 @@ to be entered at that prompt!
 
 File: embark.info,  Node: Running hooks before, after or around an action,  Next: Creating your own keymaps,  Prev: Running some setup after injecting the target,  Up: Advanced configuration
 
-3.5 Running hooks before, after or around an action
+3.6 Running hooks before, after or around an action
 ===================================================
 
 Embark has three variables, ‘embark-pre-action-hooks’,
@@ -919,7 +935,7 @@ used in the default values of ‘embark-pre-action-hooks’,
 
 File: embark.info,  Node: Creating your own keymaps,  Next: Defining actions for new categories of targets,  Prev: Running hooks before, after or around an action,  Up: Advanced configuration
 
-3.6 Creating your own keymaps
+3.7 Creating your own keymaps
 =============================
 
 All internal keymaps are defined with the standard helper macro
@@ -941,7 +957,7 @@ are also made available via ‘embark-general-map’.
 
 File: embark.info,  Node: Defining actions for new categories of targets,  Prev: Creating your own keymaps,  Up: Advanced configuration
 
-3.7 Defining actions for new categories of targets
+3.8 Defining actions for new categories of targets
 ==================================================
 
 It is easy to configure Embark to provide actions for new types of
@@ -959,7 +975,7 @@ situations where the easiest option is not available.
 
 File: embark.info,  Node: New minibuffer target example - tab-bar tabs,  Next: New target example in regular buffers - short Wikipedia links,  Up: Defining actions for new categories of targets
 
-3.7.1 New minibuffer target example - tab-bar tabs
+3.8.1 New minibuffer target example - tab-bar tabs
 --------------------------------------------------
 
 As an example let us take a look at the tab bars
@@ -1072,7 +1088,7 @@ so it knows that's the keymap you want.
 
 File: embark.info,  Node: New target example in regular buffers - short Wikipedia links,  Prev: New minibuffer target example - tab-bar tabs,  Up: Defining actions for new categories of targets
 
-3.7.2 New target example in regular buffers - short Wikipedia links
+3.8.2 New target example in regular buffers - short Wikipedia links
 -------------------------------------------------------------------
 
 Say you want to teach Embark to treat text of the form
@@ -1487,36 +1503,37 @@ important features, and providing a lot of useful advice.
 
 Tag Table:
 Node: Top220
-Node: Overview1762
-Node: Acting on targets3068
-Node: The default action on a target8598
-Node: Working with sets of possible targets10499
-Node: Selecting some targets to make an ad hoc candidate set14763
-Node: embark-live a live-updating variant of embark-collect18210
-Node: Switching to a different command without losing what you've typed19897
-Node: Quick start22459
-Node: Advanced configuration27472
-Node: Showing information about available targets and actions28007
-Node: Selecting commands via completions instead of key bindings30826
-Node: Selecting commands via completion outside of Embark33907
-Node: Quitting the minibuffer after an action35437
-Node: Running some setup after injecting the target37886
-Node: Running hooks before, after or around an action41488
-Node: Creating your own keymaps46353
-Node: Defining actions for new categories of targets47260
-Node: New minibuffer target example - tab-bar tabs48027
-Ref: Telling Embark about commands that prompt for tabs by name48922
-Ref: Defining and configuring a keymap for tab actions51775
-Node: New target example in regular buffers - short Wikipedia links53562
-Node: How does Embark call the actions?55820
-Node: Non-interactive functions as actions60133
-Node: Embark, Marginalia and Consult61483
-Node: Marginalia62210
-Node: Consult63713
-Node: Related Packages68471
-Node: Resources69562
-Node: Contributions70755
-Node: Acknowledgments71465
+Node: Overview1829
+Node: Acting on targets3135
+Node: The default action on a target8665
+Node: Working with sets of possible targets10566
+Node: Selecting some targets to make an ad hoc candidate set14830
+Node: embark-live a live-updating variant of embark-collect18277
+Node: Switching to a different command without losing what you've typed19964
+Node: Quick start22526
+Node: Advanced configuration27539
+Node: Showing information about available targets and actions28141
+Node: Selecting commands via completions instead of key bindings30960
+Node: Selecting commands via completion outside of Embark34041
+Node: Quitting the minibuffer after an action35571
+Node: Recording acted-on minibuffer candidates in minibuffer history38037
+Node: Running some setup after injecting the target38873
+Node: Running hooks before, after or around an action42498
+Node: Creating your own keymaps47363
+Node: Defining actions for new categories of targets48270
+Node: New minibuffer target example - tab-bar tabs49037
+Ref: Telling Embark about commands that prompt for tabs by name49932
+Ref: Defining and configuring a keymap for tab actions52785
+Node: New target example in regular buffers - short Wikipedia links54572
+Node: How does Embark call the actions?56830
+Node: Non-interactive functions as actions61143
+Node: Embark, Marginalia and Consult62493
+Node: Marginalia63220
+Node: Consult64723
+Node: Related Packages69481
+Node: Resources70572
+Node: Contributions71765
+Node: Acknowledgments72475
 
 End Tag Table
 
