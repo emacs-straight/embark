@@ -176,6 +176,7 @@ or a list of such symbols."
     embark-target-email-at-point
     embark-target-url-at-point
     embark-target-file-at-point
+    embark-target-eww-heading-at-point
     embark-target-buffer-at-point
     embark-target-custom-variable-at-point
     embark-target-identifier-at-point
@@ -1004,10 +1005,10 @@ As a convenience, in Org Mode an initial ' or surrounding == or
         (end (line-end-position)))
     (when (save-excursion
             (goto-char beg)
-            (and (bolp)
-                 (looking-at
-                  ;; default definition from outline.el
-                  (or (bound-and-true-p outline-regexp) "[*\^L]+"))))
+            (if (boundp 'outline-search-function)
+                (funcall outline-search-function nil nil nil t)
+              ;; default definition from outline.el
+              (looking-at (or (bound-and-true-p outline-regexp) "[*\^L]+"))))
       (require 'outline) ;; Ensure that outline commands are available
       `(heading ,(buffer-substring beg end) ,beg . ,end))))
 
@@ -1019,6 +1020,11 @@ As a convenience, in Org Mode an initial ' or surrounding == or
 (defun embark-target-prog-heading-at-point ()
   "Target the outline heading at point in programming modes."
   (when (derived-mode-p 'prog-mode)
+    (embark-target-heading-at-point)))
+
+(defun embark-target-eww-heading-at-point ()
+  "Target the HTML heading at point in an eww buffer."
+  (when (derived-mode-p 'eww-mode)
     (embark-target-heading-at-point)))
 
 (defun embark-target-top-minibuffer-candidate ()

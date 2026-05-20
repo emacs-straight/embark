@@ -1,4 +1,5 @@
-This is embark.info, produced by makeinfo version 7.2 from embark.texi.
+This is embark.info, produced by makeinfo version 7.1.1 from
+embark.texi.
 
 INFO-DIR-SECTION Emacs misc features
 START-INFO-DIR-ENTRY
@@ -65,6 +66,7 @@ Embark, Marginalia and Consult
 
 * Marginalia::
 * Consult::
+
 
 
 File: embark.info,  Node: Overview,  Next: Quick start,  Prev: Top,  Up: Top
@@ -1500,45 +1502,45 @@ important features, and providing a lot of useful advice.
    • Itai Y.  Efrat (https://github.com/iyefrat)
    • Mohsin Kaleem (https://github.com/mohkale)
 
+
 
 Tag Table:
-Node: Top220
-Node: Overview1829
-Node: Acting on targets3135
-Node: The default action on a target8665
-Node: Working with sets of possible targets10566
-Node: Selecting some targets to make an ad hoc candidate set14830
-Node: embark-live a live-updating variant of embark-collect18277
-Node: Switching to a different command without losing what you've typed19964
-Node: Quick start22526
-Node: Advanced configuration27539
-Node: Showing information about available targets and actions28141
-Node: Selecting commands via completions instead of key bindings30960
-Node: Selecting commands via completion outside of Embark34041
-Node: Quitting the minibuffer after an action35571
-Node: Recording acted-on minibuffer candidates in minibuffer history38037
-Node: Running some setup after injecting the target38873
-Node: Running hooks before, after or around an action42498
-Node: Creating your own keymaps47363
-Node: Defining actions for new categories of targets48270
-Node: New minibuffer target example - tab-bar tabs49037
-Ref: Telling Embark about commands that prompt for tabs by name49932
-Ref: Defining and configuring a keymap for tab actions52785
-Node: New target example in regular buffers - short Wikipedia links54572
-Node: How does Embark call the actions?56830
-Node: Non-interactive functions as actions61143
-Node: Embark, Marginalia and Consult62493
-Node: Marginalia63220
-Node: Consult64723
-Node: Related Packages69481
-Node: Resources70572
-Node: Contributions71765
-Node: Acknowledgments72475
+Node: Top222
+Node: Overview1832
+Node: Acting on targets3138
+Node: The default action on a target8668
+Node: Working with sets of possible targets10569
+Node: Selecting some targets to make an ad hoc candidate set14833
+Node: embark-live a live-updating variant of embark-collect18280
+Node: Switching to a different command without losing what you've typed19967
+Node: Quick start22529
+Node: Advanced configuration27542
+Node: Showing information about available targets and actions28144
+Node: Selecting commands via completions instead of key bindings30963
+Node: Selecting commands via completion outside of Embark34044
+Node: Quitting the minibuffer after an action35574
+Node: Recording acted-on minibuffer candidates in minibuffer history38040
+Node: Running some setup after injecting the target38876
+Node: Running hooks before, after or around an action42501
+Node: Creating your own keymaps47366
+Node: Defining actions for new categories of targets48273
+Node: New minibuffer target example - tab-bar tabs49040
+Ref: Telling Embark about commands that prompt for tabs by name49935
+Ref: Defining and configuring a keymap for tab actions52788
+Node: New target example in regular buffers - short Wikipedia links54575
+Node: How does Embark call the actions?56833
+Node: Non-interactive functions as actions61146
+Node: Embark, Marginalia and Consult62496
+Node: Marginalia63223
+Node: Consult64726
+Node: Related Packages69484
+Node: Resources70575
+Node: Contributions71768
+Node: Acknowledgments72478
 
 End Tag Table
 
 
 Local Variables:
 coding: utf-8
-Info-documentlanguage: en
 End:
