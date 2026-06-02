@@ -507,7 +507,10 @@ arguments and more details."
     (insert-pair embark--mark-target)
     (org-emphasize embark--mark-target)
     ;; do the actual work of selecting & deselecting targets
-    (embark-select embark--select))
+    (embark-select embark--select)
+    ;; fix behavior of embark-insert when called as a quitting action
+    ;; from a minibuffer without a completion session (see issue #806)
+    (embark-insert embark--insert-in-minibuffer-selected-window-if-quitting))
   "Alist associating commands with post-action hooks.
 The hooks are run instead of the embarked upon action.  The hook
 can decide whether or not to run the action or it can run it
@@ -3100,6 +3103,7 @@ For non-minibuffers, assume candidates are of given TYPE."
                 (add-face-text-property
                  0 (length disp) face t (setq disp (concat disp))))
               (setq pos nextd chunks (cons disp chunks)))
+          (pcase disp (`(space :align-to . ,_) (push " " chunks)))
           (while (< pos nextd)
             (let ((nexti
                    (next-single-property-change pos 'invisible str nextd)))
@@ -3740,7 +3744,10 @@ constituent character next to an existing word constituent.
 
 2. For a multiline inserted string, newlines may be added before
 or after as needed to ensure the inserted string is on lines of
-its own."
+its own.
+
+As a convenience, if the buffer is read-only, attempt the insertion in
+the window returned by `other-window-for-scrolling' instead."
   (let* ((separator (embark--separator strings))
          (multiline
           (or (and (cdr strings) (string-match-p "\n" separator))
@@ -4090,7 +4097,7 @@ It assumes the URL was encoded in UTF-8."
     (access-file dir "Download failed")
     (url-retrieve url #'eww-download-callback (list url dir))))
 
-;;; Setup and pre-action hooks
+;;; Hooks
 
 (defun embark--restart (&rest _)
   "Restart current command with current input.
@@ -4243,7 +4250,21 @@ This simply calls RUN with the REST of its arguments inside
   "Run action with a universal prefix argument."
   (setq prefix-arg '(4)))
 
-;;; keymaps
+(cl-defun embark--insert-in-minibuffer-selected-window-if-quitting
+    (&rest args &key quit run &allow-other-keys)
+  "Insert in `minibuffer-selected-window' if called quittingly from minibuffer.
+For use as an around action hook on `embark-insert'.  When called as an
+action from the minibuffer, `embark-insert' will insert into the window
+returned by `minibuffer-selected-window' if the minibuffer is in a
+completion session, and into the minibuffer itself- if not.  This is not
+useful behavior if the action will also quit the minibuffer, so this
+hook makes the minibuffer read-only in the quitting case, which causes
+`embark-insert' to insert into the window returned by
+`other-window-for-scrolling' instead."
+  (let ((buffer-read-only (or (and quit (minibufferp)) buffer-read-only)))
+    (apply run args)))
+
+;;; Keymaps
 
 (defvar-keymap embark-meta-map
   :doc "Keymap for non-action Embark functions."
